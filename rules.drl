@@ -15,7 +15,7 @@ import ir.AuthorizationResult;
         when
             $request: ValidateServiceRequestCommand($request.getApplicant().getIdentificationStatus() in ("3, 5"))
         then
-            $request.setCheckOnly(true);
-		    $request.setValid(true);
+            $request.setCheckOnly(false);
+		    $request.setValid(false);
 		    $request.addViolatedRule("IDENTIFICATION_TIMEOUT");
     end
