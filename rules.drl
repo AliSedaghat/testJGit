@@ -1,4 +1,4 @@
-    package shahkar.rules
+package shahkar.rules
 
 import ir.ValidateServiceRequestCommand;
 import ir.Applicant;
@@ -13,7 +13,7 @@ import ir.AuthorizationResult;
     rule "تمام شدن زمان در احراز هویت"
         activation-group "IDENTIFICATION_TIMEOUT"
         when
-            $request: ValidateServiceRequestCommand($request.getApplicant().getIdentificationStatus() in ("3"))
+            $request: ValidateServiceRequestCommand($request.getApplicant().getIdentificationStatus() in ("3, 5"))
         then
             $request.setCheckOnly(true);
 		    $request.setValid(true);
