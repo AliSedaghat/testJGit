@@ -1,4 +1,4 @@
-package shahkar.rules
+    package shahkar.rules
 
 import ir.ValidateServiceRequestCommand;
 import ir.Applicant;
@@ -16,6 +16,6 @@ import ir.AuthorizationResult;
             $request: ValidateServiceRequestCommand($request.getApplicant().getIdentificationStatus() in ("3"))
         then
             $request.setCheckOnly(true);
-		    $request.setValid(false);
+		    $request.setValid(true);
 		    $request.addViolatedRule("IDENTIFICATION_TIMEOUT");
     end
