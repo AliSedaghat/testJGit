@@ -13,7 +13,7 @@ import ir.AuthorizationResult;
     rule "تمام شدن زمان در احراز هویت"
         activation-group "IDENTIFICATION_TIMEOUT"
         when
-            $request: ValidateServiceRequestCommand($request.getApplicant().getIdentificationStatus() in ("3, 5"))
+            $request: ValidateServiceRequestCommand($request.getApplicant().getIdentificationStatus() in ("3, 53"))
         then
             $request.setCheckOnly(false);
 		    $request.setValid(false);
